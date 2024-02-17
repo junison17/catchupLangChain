@@ -25,7 +25,6 @@ def createChain(llm, output_parser):
 
 # Function to interact with OpenAI API
 def generate_text(api_key, input_text, whatToAsk, language):
-    api_key = "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"
     try: 
         model_name = modelName()
          # Initialize your OpenAI instance using the provided API key
