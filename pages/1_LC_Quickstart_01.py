@@ -25,23 +25,22 @@ def createChain(llm, output_parser):
 
 # Function to interact with OpenAI API
 def generate_text(api_key, input_text, whatToAsk, language):
-    api_key = "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"
     try: 
         model_name = modelName()
          # Initialize your OpenAI instance using the provided API key
         llm = ChatOpenAI(openai_api_key=api_key,model_name=model_name )
         if (whatToAsk == 'Basic'):
-            st.write("* - Simpleast way to use LLM. *")
+            st.write("- *Simpleast way to use LLM.*")
             generated_text = llm.invoke("Please answer for this question. in " + language + ". " + input_text )
         elif (whatToAsk == 'ChatPromptTemplate'):
             output_parser = False
             chain = createChain(llm, output_parser)
-            st.write("* - Prompt templates are used to convert raw user input to a better input to the LLM.*")
+            st.write("- *Prompt templates are used to convert raw user input to a better input to the LLM.*")
             generated_text = chain.invoke({"input": "Please answer for this question. in " + language + ". " + input_text})
         else:
             output_parser = True
             chain = createChain(llm, output_parser)
-            st.write("* - The output of a ChatModel (and therefore, of this chain) is a message. However, it's often much more convenient to work with strings.*")
+            st.write("- *The output of a ChatModel (and therefore, of this chain) is a message. However, it's often much more convenient to work with strings.*")
             generated_text = chain.invoke({"input": "Please answer for this question. in " + language + ". " + input_text})
 
         return generated_text
