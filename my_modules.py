@@ -6,6 +6,10 @@ def modelName():
     modelName = 'gpt-3.5-turbo-0125'
     return modelName
 
+def modelName_embedding_small():
+    modelName = 'text-embedding-3-small'
+    return modelName
+
 def display_source_code(fileName):
     # Get the current file path
     current_file_path = os.path.abspath(__file__)
