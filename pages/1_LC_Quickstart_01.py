@@ -3,10 +3,8 @@ from langchain_openai import ChatOpenAI
 from openai import OpenAIError
 from my_modules import view_sourcecode, modelName
 import os
-
-st.sidebar.header("LangChain QuickStart 01 🧑‍🎨")
-st.sidebar.write('Tool : ChatOpenAI, Langchain, Streamlit, ChatPromptTemplate, StrOutputParser, openai-OpenAIError')
-st.sidebar.write('On this page, you will learn how to build a simple application with LangChain and how to use the most basic and common components of LangChain: prompt templates, models, and output parsers.')
+from langchain_community.callbacks import get_openai_callback
+from langchain_sidebar_content import LC_QuickStart_01
 
 def createChain(llm, output_parser):
     from langchain_core.prompts import ChatPromptTemplate
@@ -41,7 +39,9 @@ def generate_text(api_key, input_text, whatToAsk, language):
             output_parser = True
             chain = createChain(llm, output_parser)
             st.write("- *The output of a ChatModel (and therefore, of this chain) is a message. However, it's often much more convenient to work with strings.*")
-            generated_text = chain.invoke({"input": "Please answer for this question. in " + language + ". " + input_text})
+            with get_openai_callback() as cb:
+                generated_text = chain.invoke({"input": "Please answer for this question. in " + language + ". " + input_text})
+                st.write(cb)
 
         return generated_text
     except OpenAIError as e:
@@ -85,10 +85,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-st.sidebar.header("Items to study in this example")
-st.sidebar.markdown(""" - [LangChain Quickstart](https://python.langchain.com/docs/get_started/quickstart) """)
-st.sidebar.markdown(""" - [ChatOpenAI Python](https://python.langchain.com/docs/integrations/chat/openai) """)
-st.sidebar.markdown(""" - [ChatOpenAI JS](https://js.langchain.com/docs/integrations/chat/openai) """)
-st.sidebar.markdown(""" - [ChatPromptTemplate](https://api.python.langchain.com/en/latest/prompts/langchain_core.prompts.chat.ChatPromptTemplate.html) """)
-st.sidebar.markdown(""" - [StrOutputParser API](https://api.python.langchain.com/en/latest/output_parsers/langchain_core.output_parsers.string.StrOutputParser.html) """)
-st.sidebar.markdown(""" - [OpenAI Error Types](https://help.openai.com/en/articles/6897213-openai-library-error-types-guidance) """)
+LC_QuickStart_01()
