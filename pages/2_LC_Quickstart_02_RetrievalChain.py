@@ -13,14 +13,18 @@ def generate_text(api_key, language, question):
         embedding_model_name = modelName_embedding_small()
         model_name = modelName()
 
+        st.write("*** Work Process ***")
+
         # 1. Get Data
         from langchain_community.document_loaders import WebBaseLoader
         loader = WebBaseLoader("https://docs.smith.langchain.com")
         docs = loader.load()
+        st.write("1. Get data from the Webpage.")
 
         # 2. Set Embedding model
         from langchain_openai import OpenAIEmbeddings
         embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key, model=embedding_model_name)
+        st.write("2. Set Embedding Model. (Model Name is " + embedding_model_name + ")")
 
         # 3. Store vector into vector storage
         from langchain_community.vectorstores import FAISS
@@ -28,6 +32,7 @@ def generate_text(api_key, language, question):
         text_splitter = RecursiveCharacterTextSplitter()
         documents = text_splitter.split_documents(docs)
         vector = FAISS.from_documents(documents, embeddings)
+        st.write("3. Split text and store as vector using FAISS.")
 
         # 4. create documents chain
         from langchain_core.prompts import ChatPromptTemplate
@@ -43,22 +48,21 @@ def generate_text(api_key, language, question):
 
         llm = ChatOpenAI(openai_api_key=openai_api_key,model_name=model_name )
         document_chain = create_stuff_documents_chain(llm, prompt)
+        st.write("4. Create Document chain. -create_stuff_documents_chain(llm, prompt)-")
 
         # 5. Create Retrieval Chain
         from langchain.chains import create_retrieval_chain
-
         retriever = vector.as_retriever()
         retrieval_chain = create_retrieval_chain(retriever, document_chain)
+        st.write("5. Create Retrieval Chain. -create_retrieval_chain(retriever, document_chain)-")
 
         with get_openai_callback() as cb:
             generated_text = retrieval_chain.invoke({"input": question})
             st.write(cb)
 
-        # LangSmith offers several features that can help with testing:...
-
         vector.delete([vector.index_to_docstore_id[0]])
         # Is now missing
-        0 in vector.index_to_docstore_id
+        # 0 in vector.index_to_docstore_id
 
         return generated_text
     except OpenAIError as e:
