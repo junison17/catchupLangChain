@@ -11,6 +11,7 @@ st.write("# Catchup LangChain Tutorial!👋")
 st.sidebar.success("Select a demo above.")
 st.sidebar.markdown(""" - [LangChain Introduction](https://python.langchain.com/docs/get_started/introduction) """)
 st.sidebar.markdown(""" - [LangChain Installation](https://python.langchain.com/docs/get_started/installation) """)
+st.sidebar.markdown(""" - [LangChain Security](https://python.langchain.com/docs/security) """)
 
 st.markdown(
     """
