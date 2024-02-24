@@ -45,7 +45,20 @@ def LC_QuickStart_03():
     st.sidebar.markdown(""" - [HumanMessage](https://api.python.langchain.com/en/latest/messages/langchain_core.messages.human.HumanMessage.html) """)
     st.sidebar.markdown(""" - [AIMessage](https://api.python.langchain.com/en/v0.0.339/schema/langchain.schema.messages.AIMessage.html) """)
 
-
+def LC_QuickStart_04():
+    st.sidebar.header("LangChain QuickStart 04 👨‍🔧")
+    st.sidebar.write('Tools : hub, create_openai_functions_agent, AgentExecutor, StreamlitCallbackHandler, get_openai_callback')
+    st.sidebar.write('Agents in LangChain are systems that use a language model to interact with other tools. They can be used for tasks such as grounded question/answering, interacting with APIs, or taking action. LangChain provides: A standard interface for agents.')
+    st.sidebar.header("Items to study in this example")
+    st.sidebar.markdown(""" - [LangChain Quickstart](https://python.langchain.com/docs/get_started/quickstart) """)    
+    st.sidebar.markdown(""" - [LangChain Hub](https://docs.smith.langchain.com/cookbook/hub-examples) """)
+    st.sidebar.markdown(""" - [LangChain Agents](https://python.langchain.com/docs/modules/agents/) """)
+    st.sidebar.markdown(""" - [create_openai_functions_agent](https://python.langchain.com/docs/modules/agents/agent_types/openai_functions_agent) """)
+    st.sidebar.markdown(""" - [create_openai_functions_agent API](https://api.python.langchain.com/en/latest/agents/langchain.agents.openai_functions_agent.base.create_openai_functions_agent.html) """)
+    st.sidebar.markdown(""" - [LangChain AgentExecutor API](https://api.python.langchain.com/en/latest/agents/langchain.agents.agent.AgentExecutor.html) """)
+    st.sidebar.markdown(""" - [StreamlitCallbackHandler API](https://api.python.langchain.com/en/latest/callbacks/langchain_community.callbacks.streamlit.streamlit_callback_handler.StreamlitCallbackHandler.html) """)
+    st.sidebar.markdown(""" - [get_openai_callback](https://python.langchain.com/docs/modules/model_io/llms/token_usage_tracking) """)
+    st.sidebar.markdown(""" - [get_openai_callback API](https://api.python.langchain.com/en/v0.0.341/callbacks/langchain.callbacks.manager.get_openai_callback.html) """)
 
 
 
