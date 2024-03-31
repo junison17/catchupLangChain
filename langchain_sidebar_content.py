@@ -79,8 +79,8 @@ def LC_QuickStart_04():
 
 def LC_QuickStart_08():
     st.sidebar.header("OpenAI Assistants API 🤵🏻‍♂️")
-    st.sidebar.write('Tool : LangChain, Streamlit, OpenAI, Python, Visual Studio Code, Streamlit Cloud, Github')
-    st.sidebar.write('This page is all about sharing what I have found while digging into the tools and methods I need to develop my AI Web App.')
+    st.sidebar.write('Tool : OpenAI Assistants API, Jocoding Youtube, TeddyNote blog')
+    st.sidebar.write('This page contains a brief description of the beta version of OpenAI\'s Assistants API.')
     st.sidebar.header("Links where you can download the necessary tools.")
     st.sidebar.markdown(""" - [OpenAI Assistants API Overview](https://platform.openai.com/docs/assistants/overview?context=with-streaming) """)
     st.sidebar.markdown(""" - [OpenAI API Key](https://platform.openai.com/api-keys) """)
