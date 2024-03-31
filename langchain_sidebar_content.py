@@ -1,5 +1,22 @@
 import streamlit as st
 
+def LC_QuickStart_00():
+    st.sidebar.header("AI Web App Development 🏠")
+    st.sidebar.write('Tool : LangChain, Streamlit, OpenAI, Python, Visual Studio Code, Streamlit Cloud, Github')
+    st.sidebar.write('This page is all about sharing what I have found while digging into the tools and methods I need to develop my AI Web App.')
+    st.sidebar.header("Links where you can download the necessary tools.")
+    st.sidebar.markdown(""" - [Python](https://www.python.org/downloads/) """)
+    st.sidebar.markdown(""" - [OpenAI API Key](https://platform.openai.com/api-keys) """)
+    st.sidebar.markdown(""" - [Visual Studio Code](https://code.visualstudio.com/download) """)
+    st.sidebar.markdown(""" - [LangChain](https://python.langchain.com/docs/get_started/installation) """)
+    st.sidebar.markdown(""" - [Streamlit](https://docs.streamlit.io/get-started/installation) """)
+    st.sidebar.markdown(""" - [Streamlit Cloud](https://streamlit.io/cloud) """)
+    st.sidebar.markdown(""" - [GitHub Docs](https://docs.github.com/en/get-started/start-your-journey/hello-world) """)    
+    st.sidebar.markdown(""" - [Streamlit Multipage Template](https://docs.streamlit.io/get-started/tutorials/create-a-multipage-app) """)
+    st.sidebar.markdown(""" - [Streamlit API reference](https://docs.streamlit.io/library/api-reference) """)
+    st.sidebar.markdown(""" - [Hugging Face](https://huggingface.co/) """)
+    st.sidebar.markdown(""" - [Kaggle](https://www.kaggle.com/) """)
+
 def LC_QuickStart_01():
     st.sidebar.header("LangChain QuickStart 01 🧑‍🎨")
     st.sidebar.write('Tool : ChatOpenAI, Langchain, Streamlit, ChatPromptTemplate, StrOutputParser, openai-OpenAIError')
@@ -60,5 +77,20 @@ def LC_QuickStart_04():
     st.sidebar.markdown(""" - [get_openai_callback](https://python.langchain.com/docs/modules/model_io/llms/token_usage_tracking) """)
     st.sidebar.markdown(""" - [get_openai_callback API](https://api.python.langchain.com/en/v0.0.341/callbacks/langchain.callbacks.manager.get_openai_callback.html) """)
 
-
+def LC_QuickStart_08():
+    st.sidebar.header("OpenAI Assistants API 🤵🏻‍♂️")
+    st.sidebar.write('Tool : LangChain, Streamlit, OpenAI, Python, Visual Studio Code, Streamlit Cloud, Github')
+    st.sidebar.write('This page is all about sharing what I have found while digging into the tools and methods I need to develop my AI Web App.')
+    st.sidebar.header("Links where you can download the necessary tools.")
+    st.sidebar.markdown(""" - [OpenAI Assistants API Overview](https://platform.openai.com/docs/assistants/overview?context=with-streaming) """)
+    st.sidebar.markdown(""" - [OpenAI API Key](https://platform.openai.com/api-keys) """)
+    st.sidebar.markdown(""" - [DevDay Announcement](https://coronasdk.tistory.com/1496) """)
+    st.sidebar.markdown(""" - [Example (Galileo)](https://cdn.openai.com/new-models-and-developer-products-announced-at-devday/assistants-playground.mp4 ) """)
+    st.sidebar.markdown(""" - [Assistants API Help Page](https://help.openai.com/en/articles/8550641-assistants-api) """)
+    st.sidebar.markdown(""" - [Streamlit Cloud](https://platform.openai.com/docs/api-reference/assistants-streaming/events ) """)
+    st.sidebar.markdown(""" - [Assistant stream events (status)](https://docs.github.com/en/get-started/start-your-journey/hello-world) """)    
+    st.sidebar.markdown(""" - [Assistant Support Files](https://platform.openai.com/docs/assistants/tools/supported-files) """)
+    st.sidebar.markdown(""" - [Assistants Cookbook](https://github.com/openai/openai-cookbook/blob/main/examples/Assistants_API_overview_python.ipynb) """)
+    st.sidebar.markdown(""" - [TeddyNote Blog](https://teddylee777.github.io/openai/openai-assistant-tutorial/ ) """)
+    st.sidebar.markdown(""" - [JoCoding Youtube](https://youtu.be/LdYb356GXeI?si=u_LpHRISWeCkkgWn) """)
 
