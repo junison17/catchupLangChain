@@ -4,7 +4,7 @@ from langchain_sidebar_content import LC_QuickStart_08
 from my_modules import view_sourcecode
 import os
 
-st.title('AI Web App Structure and tools')
+st.title('OpenAI Assistants API')
 st.write('')
 st.write('For bigger screen, click the link below.')
 st.markdown(""" - [Google Slide Src](https://docs.google.com/presentation/d/1HVnVfHrXLo8KiNmhWOhIeWZwrjvDuGVhaSW4u6rxoy8/edit?usp=sharing) """)
