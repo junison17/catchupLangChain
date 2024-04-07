@@ -18,3 +18,4 @@ tavily-python
 langchainhub
 beautifulsoup4
 faiss-cpu
+requests
