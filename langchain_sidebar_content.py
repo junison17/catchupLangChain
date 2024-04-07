@@ -94,3 +94,15 @@ def LC_QuickStart_08():
     st.sidebar.markdown(""" - [TeddyNote Blog](https://teddylee777.github.io/openai/openai-assistant-tutorial/ ) """)
     st.sidebar.markdown(""" - [JoCoding Youtube](https://youtu.be/LdYb356GXeI?si=u_LpHRISWeCkkgWn) """)
 
+def OpenAI_AssistantsAPI_Function():
+    st.sidebar.header("OpenAI Assistants API Function 📢")
+    st.sidebar.write('Tool : OpenAI Assistants API, Requests HTTP Library, JSON, freeCodeCamp.org, newsapi.org')
+    st.sidebar.write('This page shows an example using the Functions tool from OpenAI\'s Assistants API. If you give a Topic, it retrieves related news from newsapi.org and provides a summary of the article.')
+    st.sidebar.header("Links where you can download the necessary tools.")
+    st.sidebar.markdown(""" - [OpenAI Assistants API Overview](https://platform.openai.com/docs/assistants/overview?context=with-streaming) """)
+    st.sidebar.markdown(""" - [OpenAI API Key](https://platform.openai.com/api-keys) """)
+    st.sidebar.markdown(""" - [newsapi.org](https://newsapi.org/) """)
+    st.sidebar.markdown(""" - [Original Source code](https://github.com/pdichone/vincibits-news-aggregator/blob/main/app.py ) """)
+    st.sidebar.markdown(""" - [Youtube Reference](https://youtu.be/qHPonmSX4Ms?si=GH99-vGzx-kJ6epq) """)
+    st.sidebar.markdown(""" - [JSON module](https://docs.python.org/3/library/json.html) """)
+    st.sidebar.markdown(""" - [Requests HTTP Library](https://pypi.org/project/requests/) """)    
