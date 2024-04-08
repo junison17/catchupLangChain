@@ -36,8 +36,8 @@ def get_news(news_api_key, topic):
                 url = article["url"]
                 published_at = article["publishedAt"]
                 content = article["content"]
-                title_description = f"""Title: {title}, Author: {author}, Source: {source_name}, 
-                 description: {description}  URL: {url}"""
+                title_description = f"""Title: {title}, \n Author: {author}, \n Source: {source_name}, 
+                 \n description: {description}  \n URL: {url}, \n Content: {content}"""
 
                 final_news.append(title_description)
 
