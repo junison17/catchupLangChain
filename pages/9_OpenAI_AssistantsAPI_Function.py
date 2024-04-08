@@ -5,8 +5,7 @@ import requests
 import json
 import time
 from langchain_sidebar_content import OpenAI_AssistantsAPI_Function
-# https://github.com/pdichone/vincibits-news-aggregator/blob/main/app.py
-# https://youtu.be/qHPonmSX4Ms?si=GH99-vGzx-kJ6epq
+from my_modules import view_sourcecode
 
 def get_news(news_api_key, topic):
     url = (
@@ -16,11 +15,9 @@ def get_news(news_api_key, topic):
         response = requests.get(url)
 
         if response.status_code == 200:
-            # news = response.json()
             news = json.dumps(response.json(), indent=4)
             # Convert JSON string to a Python dictionary
             news_json = json.loads(news)
-
             data = news_json
 
             # Accessing individual fields
@@ -43,13 +40,6 @@ def get_news(news_api_key, topic):
                  description: {description}  URL: {url}"""
 
                 final_news.append(title_description)
-
-                # You can now process these fields as needed
-                # print(
-                #     f"""Title: {title}, \nAuthor: {author}, \n Source: {source_name},
-                # \n description: {description} \n URL: {url}"""
-                # )
-                # print("\n")
 
             return final_news
         else:
@@ -311,5 +301,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-
+    
+current_file_name = os.path.basename(__file__)
+view_sourcecode(current_file_name)
 OpenAI_AssistantsAPI_Function()
