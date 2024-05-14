@@ -1,6 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from my_modules import adsense_ads
 
 st.set_page_config(
     page_title="Catchup LangChain Tutorial",
@@ -13,6 +12,7 @@ st.sidebar.success("Select a demo above.")
 st.sidebar.markdown(""" - [LangChain Introduction](https://python.langchain.com/docs/get_started/introduction) """)
 st.sidebar.markdown(""" - [LangChain Installation](https://python.langchain.com/docs/get_started/installation) """)
 st.sidebar.markdown(""" - [LangChain Security](https://python.langchain.com/docs/security) """)
+st.sidebar.markdown(""" - [Streamlit iframe API](https://docs.streamlit.io/develop/api-reference/custom-components/st.components.v1.iframe) """)
 
 st.write('For bigger screen, click the link below.')
 st.markdown(""" - [Google Slide Src](https://python.langchain.com/v0.1/docs/get_started/introduction/) """)
@@ -36,4 +36,3 @@ st.markdown(
 """
 )
 
-adsense_ads()
