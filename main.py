@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from my_modules import adsense_ads
 
 st.set_page_config(
@@ -13,30 +14,20 @@ st.sidebar.markdown(""" - [LangChain Introduction](https://python.langchain.com/
 st.sidebar.markdown(""" - [LangChain Installation](https://python.langchain.com/docs/get_started/installation) """)
 st.sidebar.markdown(""" - [LangChain Security](https://python.langchain.com/docs/security) """)
 
-st.markdown(
-    """
-    LangChain is a framework for developing applications powered by language models. It enables applications that:
-    \n**Are context-aware**: connect a language model to sources of context (prompt instructions, few shot examples, content to ground its response in, etc.)
-    \n**Reason**: rely on a language model to reason (about how to answer based on provided context, what actions to take, etc.)
-"""
-)
+st.write('For bigger screen, click the link below.')
+st.markdown(""" - [Google Slide Src](https://python.langchain.com/v0.1/docs/get_started/introduction/) """)
 
-st.markdown(
-    """
-    This framework consists of several parts.
+# embed streamlit docs in a streamlit app
+components.iframe("https://python.langchain.com/v0.1/docs/get_started/introduction/", height =1000, width = 1500, scrolling=True)
 
-    \n**LangChain Libraries**: The Python and JavaScript libraries. Contains interfaces and integrations for a myriad of components, a basic run time for combining these components into chains and agents, and off-the-shelf implementations of chains and agents.
-    \n**LangChain Templates**: A collection of easily deployable reference architectures for a wide variety of tasks.
-    \n**LangServe**: A library for deploying LangChain chains as a REST API.
-    \n**LangSmith**: A developer platform that lets you debug, test, evaluate, and monitor chains built on any LLM framework and seamlessly integrates with LangChain.
-"""
-)
-
-st.image('./images/langchain_structure.jpg', caption='LangChain Structure')
+st.write('')
+st.write('# CatchUp AI related materials')
+st.write('')
 
 st.markdown(
     """
     - [Catchup AI Streamlit Web App](https://catchupai.streamlit.app/)
+    - [Catchup AI for Small Business App](https://catchupai4sb.streamlit.app/)
     - [Catchup AI Youtube Channel](https://www.youtube.com/@catchupai)
     - [Catchup AI Tistory Blog](https://coronasdk.tistory.com/)
     - [Deep Learning Fundamental PPT (Eng. Ver.)](https://docs.google.com/presentation/d/1F4qxSAv9g13de99rS8fcp4e1LCfrILq8QaahXCPx1Pw/edit?usp=sharing)
