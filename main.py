@@ -15,7 +15,7 @@ st.sidebar.markdown(""" - [LangChain Security](https://python.langchain.com/docs
 st.sidebar.markdown(""" - [Streamlit iframe API](https://docs.streamlit.io/develop/api-reference/custom-components/st.components.v1.iframe) """)
 
 st.write('For bigger screen, click the link below.')
-st.markdown(""" - [Google Slide Src](https://python.langchain.com/v0.1/docs/get_started/introduction/) """)
+st.markdown(""" - [LangChain Doc](https://python.langchain.com/v0.1/docs/get_started/introduction/) """)
 
 # embed streamlit docs in a streamlit app
 components.iframe("https://python.langchain.com/v0.1/docs/get_started/introduction/", height =1000, width = 1500, scrolling=True)
