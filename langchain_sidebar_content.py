@@ -39,6 +39,7 @@ def LC_QuickStart_02():
     st.sidebar.markdown(""" - [Vector stores](https://python.langchain.com/docs/modules/data_connection/vectorstores) """)
     st.sidebar.markdown(""" - [BeautifulSoup](https://beautiful-soup-4.readthedocs.io/en/latest/) """)
     st.sidebar.markdown(""" - [WebBaseLoader](https://python.langchain.com/docs/integrations/document_loaders/web_base) """)
+    st.sidebar.markdown(""" - [WebBaseLoader API](https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.web_base.WebBaseLoader.html) """)
     st.sidebar.markdown(""" - [OpenAI Embedding](https://python.langchain.com/docs/integrations/text_embedding/openai) """)
     st.sidebar.markdown(""" - [FAISS](https://python.langchain.com/docs/integrations/vectorstores/faiss) """)
     st.sidebar.markdown(""" - [RecursiveCharacterTextSplitter](https://python.langchain.com/docs/modules/data_connection/document_transformers/recursive_text_splitter) """)
