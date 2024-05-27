@@ -1,23 +1,26 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI
 from openai import OpenAIError
-from my_modules import view_sourcecode, modelName, modelName_embedding_small
+from my_modules import view_sourcecode, modelName, modelName_embedding_small, modelName4o
 import os
 from langchain_community.callbacks import get_openai_callback
 from langchain_sidebar_content import LC_QuickStart_02
 
 # Function to interact with OpenAI API
-def generate_text(api_key, language, question):
+def generate_text(api_key, language, question, select_model):
     try: 
         openai_api_key = api_key
         embedding_model_name = modelName_embedding_small()
-        model_name = modelName()
+        if(select_model == "Cheapest"):
+            model_name = modelName()
+        else:
+            model_name = modelName4o()
 
         st.write("*** Work Process ***")
 
         # 1. Get Data
         from langchain_community.document_loaders import WebBaseLoader
-        loader = WebBaseLoader("https://docs.smith.langchain.com")
+        loader = WebBaseLoader("https://docs.smith.langchain.com/user_guide")
         docs = loader.load()
         st.write("1. Get data from the Webpage.")
 
@@ -74,13 +77,18 @@ def main():
 
     # Get user input for OpenAI API key
     api_key = st.text_input("Please input your OpenAI API Key:", type="password")
-    st.write("Fetching this Web Page Contents : https://docs.smith.langchain.com")
+    st.write("Fetching this Web Page Contents : https://docs.smith.langchain.com/user_guide")
+
+    select_model = st.radio(
+    "Please choose the Model you'd like to use.",
+    ["Cheapest", "gpt-4o-2024-05-13"])    
 
     # List of Questions
     quastions = ["How can langsmith help with testing?", 
-                "Please tell me the additional Resources.", 
-                "What are the Next Steps?",
-                "Please summarize this context."]
+                "Please summarize on Prototyping.", 
+                "Please tell me about Beta Testing.",
+                "Please explain about Production.",
+                "Please summarize whole LangSmith User Guide."]
 
     # User-selected question
     selected_question = st.selectbox("Select a question:", quastions)    
@@ -98,7 +106,7 @@ def main():
         if api_key:
             with st.spinner('Wait for it...'):
                 # When an API key is provided, display the generated text
-                generated_text = generate_text(api_key,  selected_language, selected_question)
+                generated_text = generate_text(api_key,  selected_language, selected_question, select_model)
                 st.write(generated_text)
                 st.write("**: Answer Only**")
                 st.write(generated_text["answer"])
