@@ -42,7 +42,7 @@ def LC_QuickStart_02():
     st.sidebar.markdown(""" - [OpenAI Embedding](https://python.langchain.com/docs/integrations/text_embedding/openai) """)
     st.sidebar.markdown(""" - [FAISS](https://python.langchain.com/docs/integrations/vectorstores/faiss) """)
     st.sidebar.markdown(""" - [RecursiveCharacterTextSplitter](https://python.langchain.com/docs/modules/data_connection/document_transformers/recursive_text_splitter) """)
-    st.sidebar.markdown(""" - [RecursiveCharacterTextSplitter API](https://api.python.langchain.com/en/latest/text_splitter/langchain.text_splitter.RecursiveCharacterTextSplitter.html) """)
+    st.sidebar.markdown(""" - [RecursiveCharacterTextSplitter API](https://api.python.langchain.com/en/latest/character/langchain_text_splitters.character.RecursiveCharacterTextSplitter.html) """)
     st.sidebar.markdown(""" - [Chains](https://python.langchain.com/docs/modules/chains) """)
     st.sidebar.markdown(""" - [create_stuff_documents_chain API](https://api.python.langchain.com/en/latest/chains/langchain.chains.combine_documents.stuff.create_stuff_documents_chain.html) """)
     st.sidebar.markdown(""" - [create_retrieval_chain API](https://api.python.langchain.com/en/latest/chains/langchain.chains.retrieval.create_retrieval_chain.html#) """)
