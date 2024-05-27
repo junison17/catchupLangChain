@@ -6,6 +6,10 @@ def modelName():
     modelName = 'gpt-3.5-turbo-0125'
     return modelName
 
+def modelName4o():
+    modelName = 'gpt-4o-2024-05-13'
+    return modelName
+
 def modelName_embedding_small():
     modelName = 'text-embedding-3-small'
     return modelName
