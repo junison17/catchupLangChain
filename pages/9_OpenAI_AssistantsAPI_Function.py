@@ -216,7 +216,7 @@ def main():
     st.markdown(""" - [Get OpenAI API Key](https://platform.openai.com/api-keys) """)
 
     # List of languages available for ChatGPT
-    openai_models = ["gpt-3.5-turbo-0125", "gpt-3.5-turbo-16k-0613", "gpt-4-0125-preview", "gpt-4", "gpt-4-32k"]
+    openai_models = ["gpt-3.5-turbo-0125", "gpt-4o-2024-05-13"]
 
     # User-selected language
     selected_model = st.selectbox("Select a model:", openai_models)
