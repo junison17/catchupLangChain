@@ -5,7 +5,7 @@ import requests
 import json
 import time
 from langchain_sidebar_content import OpenAI_AssistantsAPI_Function
-from my_modules import view_sourcecode
+from my_modules import view_sourcecode, modelName, modelName4o
 
 def get_news(news_api_key, topic):
     url = (
@@ -66,9 +66,9 @@ class AssistantManager:
         self.summary = (
             None  # Add an instance variable to store the summary for streamlit
         )
-    def setAssistantThreadIDs(self,assistant_id,thread_id, openai_api_key, selected_model):
+    def setAssistantThreadIDs(self,assistant_id,thread_id, openai_api_key, select_model):
         self.client = openai.OpenAI(api_key = openai_api_key)
-        self.model = selected_model        
+        self.model = modelName() if select_model == "Cheapest" else modelName4o()        
         AssistantManager.assistant_id = assistant_id
         AssistantManager.thread_id = thread_id
 
@@ -81,9 +81,9 @@ class AssistantManager:
             self.thread = self.client.beta.threads.retrieve(AssistantManager.thread_id)
         st.write("3. Set Assistant ID and Thread ID")
 
-    def create_assistant(self, openai_api_key, selected_model, name, instructions, tools):
+    def create_assistant(self, openai_api_key, select_model, name, instructions, tools):
         self.client = openai.OpenAI(api_key = openai_api_key)
-        self.model = selected_model
+        self.model = modelName() if select_model == "Cheapest" else modelName4o()
         if not self.assistant:
             assistant_obj = self.client.beta.assistants.create(
                 name=name, instructions=instructions, tools=tools, model=self.model
@@ -215,11 +215,8 @@ def main():
     openai_api_key = st.text_input("Please input your OpenAI API Key:", type="password")
     st.markdown(""" - [Get OpenAI API Key](https://platform.openai.com/api-keys) """)
 
-    # List of languages available for ChatGPT
-    openai_models = ["gpt-3.5-turbo-0125", "gpt-4o-2024-05-13"]
-
     # User-selected language
-    selected_model = st.selectbox("Select a model:", openai_models)
+    select_model = st.radio("Please choose the Model you'd like to use.", ["Cheapest", "GPT 4o"]) 
 
     st.caption("First, create an Assistant and get the Assistant ID and Thread ID.")
     st.caption("Then use the Assistant to ask ChatGPT a question and get a response.")
@@ -236,7 +233,7 @@ def main():
                     # Create the assistant and thread if they don't exist
                     manager.create_assistant(
                         openai_api_key,
-                        selected_model,
+                        select_model,
                         name="News Summarizer",
                         instructions="You are a personal article summarizer Assistant who knows how to take a list of article's titles and descriptions and then write a short summary of all the news articles",
                         tools=[
@@ -275,14 +272,14 @@ def main():
             submit_button = st.form_submit_button(label="Run Assistant")
         # Handling the button click
         if submit_button:
-            if openai_api_key and selected_model and newsapi_key and assistant_id and thread_id and instructions:
+            if openai_api_key and select_model and newsapi_key and assistant_id and thread_id and instructions:
 
                 manager.setAssistantThreadIDs(
-                    assistant_id, thread_id, openai_api_key, selected_model
+                    assistant_id, thread_id, openai_api_key, select_model
                 )
                 # Add the message and run the assistant
                 manager.add_message_to_thread(
-                    role="user", content=f"summarize the news on this topic {instructions}?"
+                    role="user", content=f" and print it line by line. If possible, also indicate the URL link."
                 )
                 manager.run_assistant(instructions="Summarize the news")
 
