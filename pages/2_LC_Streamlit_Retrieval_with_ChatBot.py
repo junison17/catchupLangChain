@@ -1,7 +1,8 @@
 import streamlit as st
 import openai
 from langchain_community.callbacks import get_openai_callback
-from my_modules import view_sourcecode, modelName, modelName_embedding_small, modelName4o
+from my_modules import modelName, modelName_embedding_small, modelName4o
+from langchain_sidebar_content import Rag_News_Chatbot
 
 def generate_text(vector, question, model_name, selected_language, openai_api_key):
     try:
@@ -88,7 +89,8 @@ def set_SessionState(api_key, urlFromUser, select_model, selected_language):
         st.session_state.messages.append({"role": "assistant", "content": response})
 
 def main():
-    st.title('RAG - Fetch Data from given URL.')
+    st.title('RAG News Chatbot')
+    st.header('Fetch Data from Web Page of given URL.')
 
     api_key = st.text_input("Please input your OpenAI API Key:", type="password")
     urlFromUser = st.text_input("Please enter the URL of the web page to fetch data from. e.g. https://www.tecace.com/about")
@@ -101,3 +103,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+Rag_News_Chatbot()
