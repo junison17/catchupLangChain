@@ -108,3 +108,21 @@ def OpenAI_AssistantsAPI_Function():
     st.sidebar.markdown(""" - [Youtube Reference](https://youtu.be/qHPonmSX4Ms?si=GH99-vGzx-kJ6epq) """)
     st.sidebar.markdown(""" - [JSON module](https://docs.python.org/3/library/json.html) """)
     st.sidebar.markdown(""" - [Requests HTTP Library](https://pypi.org/project/requests/) """)    
+
+def Rag_News_Chatbot():
+    st.sidebar.header("RAG News Chatbot 📰")
+    st.sidebar.write('Tool : st.session_state, st.chat_message, st.chat_input,  RecursiveCharacterTextSplitter ')
+    st.sidebar.write('This document outlines the process of retrieving web page content via a user-provided URL, converting it into embeddings, and storing them in a vector database. The chunk size is adjustable. The relevant content is then retrieved, queried with a Language Learning Model (LLM), and the response is provided to the user.')
+    st.sidebar.header("Items to study in this example.")
+    st.sidebar.markdown(""" - [Streamlit session_state](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state) """)
+    st.sidebar.markdown(""" - [Streamlit chat_message](https://docs.streamlit.io/develop/api-reference/chat/st.chat_message) """)
+    st.sidebar.markdown(""" - [Streamlit chat_input](https://docs.streamlit.io/develop/api-reference/chat/st.chat_input) """)
+    st.sidebar.markdown(""" - [Streamlit chat elements](https://docs.streamlit.io/develop/api-reference/chat) """)
+    st.sidebar.markdown(""" - [RecursiveCharacterTextSpliter chunk option](https://python.langchain.com/v0.1/docs/modules/data_connection/document_transformers/recursive_text_splitter/) """)
+    st.sidebar.markdown(""" - [LangChain as_retriever(k4)](https://python.langchain.com/v0.1/docs/use_cases/chatbots/retrieval/ ) """)
+    st.sidebar.markdown(""" - [Chroma](https://blog.langchain.dev/langchain-chroma/) """)
+    st.sidebar.markdown(""" - [LangChain Text Spliter](https://js.langchain.com/v0.1/docs/modules/data_connection/document_transformers/ ) """)
+    st.sidebar.markdown(""" - [Recursively split by character](https://js.langchain.com/v0.1/docs/modules/data_connection/document_transformers/recursive_text_splitter/) """)
+    st.sidebar.markdown(""" - [LangChain Vector Stores](https://python.langchain.com/v0.1/docs/modules/data_connection/vectorstores/) """)
+    st.sidebar.markdown(""" - [LangChain Retrievers](https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/) """)
+
