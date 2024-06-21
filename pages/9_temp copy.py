@@ -10,14 +10,13 @@ loader = DocusaurusLoader("https://python.langchain.com")
 
 docs = loader.load()
 
-print(docs[0])
-print(docs[1])
-print(docs[2])
-
-
-with open('output.txt', 'w') as file:
-    for item in docs:
-        file.write(f"{item}\n")
+if docs:
+    with open('output.txt', 'w', encoding='utf-8') as file:
+        for item in docs:
+            file.write(f"{item}\n")
+    print(docs[0])
+else:
+    print("No documents were loaded.")
 
 
 # with open('output.txt', 'w') as file:
