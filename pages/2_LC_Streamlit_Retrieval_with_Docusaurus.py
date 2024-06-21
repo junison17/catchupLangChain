@@ -49,8 +49,8 @@ def crawl_vectorize(api_key, urlFromUser):
             docs = loader.load()
 
         st.write(docs[0])
-        st.write(docs[1])
-        st.write(docs[2])
+        # st.write(docs[1])
+        # st.write(docs[2])
 
         embedding_model_name = modelName_embedding_small()
         embeddings = OpenAIEmbeddings(openai_api_key=api_key, model=embedding_model_name)
