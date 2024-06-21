@@ -20,3 +20,4 @@ beautifulsoup4
 faiss-cpu
 requests
 lxml
+nest_asyncio
