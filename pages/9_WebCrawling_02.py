@@ -91,6 +91,9 @@ def crawl(url):
             text = soup.get_text()
             if "You need to enable JavaScript to run this app." in text:
                 print("Unable to parse page " + url + " due to JavaScript being required")
+                
+            # 연속된 줄 바꿈을 하나로 변환
+            text = re.sub(r'\n+', '\n', text)
             # URL 정보를 key-value 형식으로 쓰기
             f.write(f"url: {url}\n")
             # 텍스트 쓰기
