@@ -49,6 +49,17 @@ def LC_QuickStart_02():
     st.sidebar.markdown(""" - [create_stuff_documents_chain API](https://api.python.langchain.com/en/latest/chains/langchain.chains.combine_documents.stuff.create_stuff_documents_chain.html) """)
     st.sidebar.markdown(""" - [create_retrieval_chain API](https://api.python.langchain.com/en/latest/chains/langchain.chains.retrieval.create_retrieval_chain.html#) """)
 
+def LC_QuickStart_02_RemedialClass():
+    st.sidebar.header("LangChain QuickStart 02  Remedial Class ✍🏻")
+    st.sidebar.write('Tools : RecursiveCharacterTextSplitter() params, as_retriever() prams, VectorStore')
+    st.sidebar.write('In this page, we will explore the parameters available for use in RecursiveCharacterTextSplitter() and as_retriever().')
+    st.sidebar.header("Items to study in this example")
+    st.sidebar.markdown(""" - [Recursively split by character](https://python.langchain.com/v0.1/docs/modules/data_connection/document_transformers/recursive_text_splitter/) """)  
+    st.sidebar.markdown(""" - [blog for RecursiveCharacterTextSplitter](https://dev.to/eteimz/understanding-langchains-recursivecharactertextsplitter-2846) """)
+    st.sidebar.markdown(""" - [Vector stores](https://python.langchain.com/docs/modules/data_connection/vectorstores) """)
+    st.sidebar.markdown(""" - [RecursiveCharacterTextSplitter](https://api.python.langchain.com/en/latest/character/langchain_text_splitters.character.RecursiveCharacterTextSplitter.html) """)
+    st.sidebar.markdown(""" - [Vector store-backed retriever](https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/) """)
+
 def LC_QuickStart_03():
     st.sidebar.header("LangChain QuickStart 03 🗣️")
     st.sidebar.write('Tools : create_history_aware_retriever, MessagesPlaceholder, HumanMessage, AIMessage')
