@@ -152,6 +152,7 @@ def main():
             with st.spinner('Wait for it...'):
                 # When an API key is provided, display the generated text
                 generated_text = generate_text(api_key,  selected_3rd_question, selected_4th_question)
+                st.write(generated_text)
                 st.write("chat_history is " , generated_text["chat_history"])
                 st.write("question is :blue[" , generated_text["input"],"]")
                 st.write("answer is :blue[" , generated_text["answer"],"]")
