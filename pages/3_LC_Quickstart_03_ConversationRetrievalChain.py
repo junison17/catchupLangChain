@@ -117,7 +117,7 @@ def generate_text(api_key,  selected_3rd_question, selected_4th_question):
         st.warning(e)
 
 def main():
-    st.title('LangChain Quickstart 03 - :blue[Conversation Retrieval Chain]')
+    st.title('LangChain Quickstart 03 - :blue[create_history_aware_retriever]')
 
     # Get user input for OpenAI API key
     api_key = st.text_input("Please input your OpenAI API Key:", type="password")
