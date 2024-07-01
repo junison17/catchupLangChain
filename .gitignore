@@ -6,3 +6,7 @@ dougVenv/
 
 # Ignore backup requirements file
 requirements_backup.txt
+
+pages/9_WebCrawling_01.py
+pages/9_WebCrawling_02.py
+pages/9_temp copy.py
