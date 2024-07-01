@@ -7,7 +7,7 @@ from langchain_community.callbacks import get_openai_callback
 from langchain_sidebar_content import LC_QuickStart_03
 
 # Function to interact with OpenAI API
-def generate_text(api_key,  selected_3rd_question, selected_4th_question):
+def generate_text(api_key,  selected_3rd_question):
     try: 
         openai_api_key = api_key
         embedding_model_name = modelName_embedding_small()
@@ -17,7 +17,7 @@ def generate_text(api_key,  selected_3rd_question, selected_4th_question):
 
         # 1. Get Data
         from langchain_community.document_loaders import WebBaseLoader
-        loader = WebBaseLoader("https://docs.smith.langchain.com")
+        loader = WebBaseLoader("https://docs.smith.langchain.com/user_guide")
         docs = loader.load()
         st.write("1. Get data from the Webpage.")
 
@@ -99,7 +99,7 @@ def generate_text(api_key,  selected_3rd_question, selected_4th_question):
         st.write("answer is :blue[" , generated_text_3rd["answer"],"]")
 
         chat_history = chat_history + [HumanMessage(content=generated_text_3rd["input"]), AIMessage(content=generated_text_3rd["answer"])]
-        question_4th = "Is " + selected_4th_question + " one of them?"
+        question_4th = "What were we just talking about?"
         generated_text = retrieval_chain.invoke({
             "chat_history": chat_history,
             "input": question_4th
@@ -117,11 +117,11 @@ def generate_text(api_key,  selected_3rd_question, selected_4th_question):
         st.warning(e)
 
 def main():
-    st.title('LangChain Quickstart 03 - :blue[Conversation Retrieval Chain]')
+    st.title('LangChain Quickstart 03 - :blue[create_history_aware_retriever]')
 
     # Get user input for OpenAI API key
     api_key = st.text_input("Please input your OpenAI API Key:", type="password")
-    st.write("Fetching this Web Page Contents : https://docs.smith.langchain.com")
+    st.write("Fetching this Web Page Contents : https://docs.smith.langchain.com/user_guide")
 
     st.subheader("Scenario")
     st.write("1. The first question and answer are set in advance as follows.")
@@ -131,27 +131,26 @@ def main():
     st.caption("Question : ***:blue[Tell me how?]***, ***:green[Check the answer after Submit all the scenarios]***")
 
     # List of Questions
-    quastions_3rd = ["How many items in Next Steps?", 
-                "How many items in Additional Resources?"]
+    quastions_3rd = ["Please tell me about Prototyping?", 
+                "Please summarize on Beta Testing.",
+                "Please explain about Production." ]
 
     st.write("3. Thirdly, the question selected by you from the dropdown below will be delivered.")
     # User-selected question
     selected_3rd_question = st.selectbox("Select a question: ", quastions_3rd)   
 
     st.write("4. The 4th one asks whether the item selected by you belongs to the 3rd question category.")
-    # List of Questions
-    quastions_4th = ["User Guide", "Setup", "Pricing", "Self-Hosting", "Tracing", "Evaluation", "Prompt Hub", 
-                     "LangSmith Cookbook", "LangChain Python", "LangChain Python API Reference", "LangChain JS", "Discord" ]
 
     # User-selected question
-    selected_4th_question = st.selectbox("select an item (*:blue[LLM should know the 3rd question and the answer above to answer it.]*):", quastions_4th)   
+    st.write("4th question : What were we just talking about?")   
 
     # Button to trigger text generation
     if st.button("Submit."):
         if api_key:
             with st.spinner('Wait for it...'):
                 # When an API key is provided, display the generated text
-                generated_text = generate_text(api_key,  selected_3rd_question, selected_4th_question)
+                generated_text = generate_text(api_key,  selected_3rd_question)
+                # st.write(generated_text)
                 st.write("chat_history is " , generated_text["chat_history"])
                 st.write("question is :blue[" , generated_text["input"],"]")
                 st.write("answer is :blue[" , generated_text["answer"],"]")
