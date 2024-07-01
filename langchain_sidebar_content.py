@@ -63,7 +63,7 @@ def LC_QuickStart_02_RemedialClass():
 
 def LC_QuickStart_03():
     st.sidebar.header("LangChain QuickStart 03 🗣️")
-    st.sidebar.write('Tools : Conversational Retrieval, create_history_aware_retriever, MessagesPlaceholder, HumanMessage, AIMessage')
+    st.sidebar.write('Tools : create_history_aware_retriever, MessagesPlaceholder, HumanMessage, AIMessage')
     st.sidebar.write('The previous chain can only handle single questions, but to accommodate follow-up questions in applications like chat bots, modifications are needed.')
     st.sidebar.write('Two adjustments are crucial')
     st.sidebar.write('1) The retrieval method must consider the entire history, not just the latest input. ')
@@ -71,7 +71,9 @@ def LC_QuickStart_03():
     st.sidebar.header("Items to study in this example")
     st.sidebar.markdown(""" - [LangChain Quickstart](https://python.langchain.com/docs/get_started/quickstart) """) 
     st.sidebar.markdown(""" - [create_history_aware_retriever](https://api.python.langchain.com/en/latest/chains/langchain.chains.history_aware_retriever.create_history_aware_retriever.html) """)
-    st.sidebar.markdown(""" - [Add chat history](https://python.langchain.com/v0.1/docs/use_cases/question_answering/chat_history/ ) """)
+    st.sidebar.markdown(""" - [Conversational RAG](https://python.langchain.com/v0.2/docs/tutorials/qa_chat_history/ ) """)
+    st.sidebar.markdown(""" - [How to Add chat history](https://python.langchain.com/v0.2/docs/how_to/qa_chat_history_how_to/ ) """)
+    st.sidebar.markdown(""" - [How to stream results from your RAG application](https://python.langchain.com/v0.2/docs/how_to/qa_streaming/ ) """)
     st.sidebar.markdown(""" - [Add message history (memory)](https://python.langchain.com/v0.1/docs/expression_language/how_to/message_history/ ) """)
     st.sidebar.markdown(""" - [ConversationalRetrievalChain API](https://api.python.langchain.com/en/latest/chains/langchain.chains.conversational_retrieval.base.ConversationalRetrievalChain.html ) """)  
     st.sidebar.markdown(""" - [MessagesPlaceholder](https://api.python.langchain.com/en/latest/prompts/langchain_core.prompts.chat.MessagesPlaceholder.html) """)
