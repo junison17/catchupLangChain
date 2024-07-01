@@ -19,7 +19,7 @@ st.write('For bigger screen, click the link below.')
 st.markdown(""" - [LangChain Doc](https://python.langchain.com/v0.2/docs/introduction/) """)
 
 # embed streamlit docs in a streamlit app
-components.iframe("https://python.langchain.com/v0.1/docs/get_started/introduction/", height =1000, width = 1500, scrolling=True)
+components.iframe("https://python.langchain.com/v0.2/docs/introduction/", height =1000, width = 1500, scrolling=True)
 
 st.write('')
 st.write('# CatchUp AI related materials')
