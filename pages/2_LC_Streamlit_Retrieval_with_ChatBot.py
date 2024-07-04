@@ -93,7 +93,7 @@ def main():
     st.header('Fetch Data from Web Page of given URL.')
 
     api_key = st.text_input("Please input your OpenAI API Key:", type="password")
-    urlFromUser = st.text_input("Please enter the URL of the web page to fetch data from. e.g. https://docs.smith.langchain.com/user_guide")
+    urlFromUser = st.text_input("Please enter the URL of the web page to fetch data from. e.g. https://en.wikipedia.org/wiki/Redmond,_Washington")
     select_model = st.radio("Please choose the Model you'd like to use.", ["Cheapest", "GPT 4o"]) 
 
     available_languages = ["Korean", "Spanish", "French", "German", "Chinese", "Japanese"]
