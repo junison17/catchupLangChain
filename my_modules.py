@@ -3,6 +3,10 @@ import os
 from my_summaries import get_summary
 
 def modelName():
+    modelName = 'gpt-4o-mini-2024-07-18'
+    return modelName
+
+def modelName3_5Turbo0125():
     modelName = 'gpt-3.5-turbo-0125'
     return modelName
 
