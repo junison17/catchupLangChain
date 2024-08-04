@@ -247,7 +247,7 @@ def main():
                                         "properties": {
                                             "topic": {
                                                 "type": "string",
-                                                "description": "The topic for the news, e.g. bitcoin",
+                                                "description": "The topic for the news",
                                             }
                                         },
                                         "required": ["topic"],
@@ -265,7 +265,6 @@ def main():
         assistant_id = st.text_input("Enter Assistant ID:")
         thread_id = st.text_input("Enter Thread ID:")
 
-
         # Form for user input
         with st.form(key="user_input_form"):
             instructions = st.text_area("Enter topic:")
@@ -279,16 +278,14 @@ def main():
                 )
                 # Add the message and run the assistant
                 manager.add_message_to_thread(
-                    role="user", content=f" and print it line by line. If possible, also indicate the URL link."
+                    role="user", content=f"Summarize the news about {instructions} and print it line by line. If possible, also indicate the URL link."
                 )
-                manager.run_assistant(instructions="Summarize the news")
+                manager.run_assistant(instructions=f"Summarize the news about {instructions}")
 
                 # Wait for completion and process messages
                 manager.wait_for_completion(newsapi_key)
 
-                summary = (
-                    manager.get_summary()
-                )  # Implement get_summary() in your AssistantManager
+                summary = manager.get_summary()
                 st.write(summary)
 
                 st.text("Run Steps:")
